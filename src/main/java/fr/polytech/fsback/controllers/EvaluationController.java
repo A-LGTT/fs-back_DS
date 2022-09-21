@@ -21,7 +21,7 @@ public class EvaluationController {
     }
 
     @DeleteMapping("restaurants/{restaurantId}/evaluations/{evaluationId}")
-    public @ResponseBody boolean delEvaluation(@Valid @RequestBody EvaluationDto dto, @PathVariable int restaurantId, int evaluationId) {
+    public @ResponseBody boolean delEvaluation(@Valid @RequestBody @PathVariable int restaurantId, int evaluationId) {
         return this.evaluationService.delEvaluation(restaurantId, evaluationId);
     }
 
